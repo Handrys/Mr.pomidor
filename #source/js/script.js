@@ -23,7 +23,7 @@ if (iconMenu) {
 
 //==================== Настройки таймера ======================
 
-let minutesOptions = '02';  //Всего минут  (в сек)
+let minutesOptions = '25';  //Всего минут
 //let secondsOptions; 
 let smallBreakOptions; //Маленький перерыв (в сек)
 let bigBreakOptions; //Большой перерыв (в сек)
@@ -33,9 +33,15 @@ let soundOptions; //True/False
 
 //==================== Таймер ======================
 let minutes = minutesOptions;
-let seconds = '00';
+let seconds = '0';
 
 function template() {
+	if(minutes < 10 && minutes.toString().split('').length == 1){
+		minutes = '0' + minutes;
+	}
+	if(seconds < 10 && seconds.toString().split('').length == 1){
+		seconds = '0' + seconds;
+	}
 	document.querySelector('.timer-data__number-minutes').innerHTML = minutes;
 	document.querySelector('.timer-data__number-seconds').innerHTML = seconds;
 }
@@ -52,16 +58,9 @@ function start(){
 	function minutesTimer(){
 		minutes = minutes -1;
 		template();
-		if(minutes < 10){
-			minutes = '0' + minutes;
-		}
-		template();
 	}
 	function secondsTimer(){
 		seconds = seconds -1;
-		if(seconds < 10){
-			seconds = '0' + seconds;
-		}
 		template();
 		if (seconds <= 0) {
 			if (minutes <= 0){
@@ -76,4 +75,4 @@ function start(){
 template();
 
 document.querySelector('.timer-start').addEventListener('click',start);
-
+//==========================================================================
