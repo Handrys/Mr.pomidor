@@ -1,0 +1,258 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+
+//</Подключаем шрифты>=======================================================================================
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1170;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+body {
+	color: #000;
+	font-size: 14px;
+	//background-color: rgb(247, 215, 223);
+	background-color: rgb(24, 23, 23);
+	//background-color: rgb(241, 126, 126);
+	&.lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	&.loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	width: 100%;
+	@media (max-width: 1440px) {
+		padding: 0 28px;
+	}
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+		padding: 0 0;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+//@import "forms.scss";
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "../../js/fancybox/jquery.fancybox.scss";
+//@import "datepicker.scss";
+//@import "fontawesome.scss";
+//@import "popover.min.scss";
+//@import "baguetteBox.scss";
+//@import "pagging.scss";
+//@import "icons.scss";
+//@import "popup.scss";
+@import "header.scss";
+@import "footer.scss";
+//@import "home.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+.wrapper {
+
+	&__content {
+	}
+}
+.content {
+
+	&__wrapper {
+	}
+
+	&__timer {
+		width: 100%;
+		height: 100%;
+		margin-top: 100px;
+	}
+
+	&__tasks {
+		height: 400px;
+		margin-top: 120px;
+		border-top: 1px solid rgb(90, 89, 89);
+		border-bottom: 1px solid rgb(90, 89, 89);
+	}
+
+	&__info {
+		margin-top: 120px;
+	}
+}
+.content-timer {
+
+	&__body {
+		width: 100%;
+		padding: 0 24px;
+	}
+
+	&__window{
+		padding-bottom: 20px;
+		//background-color: rgba(209, 70, 60, 0.973);
+		background: linear-gradient(45deg, rgba(114, 3, 3, 0.822) 2%, rgb(199, 49, 35) 90%);
+		box-shadow: 0px 0px 8px 15px rgba(116, 33, 9, 0.58);
+		//border: 3px solid rgb(75, 74, 74);
+		border-radius: 10px;
+		margin: 0 auto;
+		max-width: 850px;
+		height: 400px;
+		@include flexbox();
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__window-header{
+		@include flexbox();
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 12px;
+	}
+
+	&__window-data{}
+
+	&__window-buttons{
+		@include flexbox();
+		justify-content: space-around;
+	}
+}
+
+.timer-header{
+	&__settings{
+		
+	}
+
+	&__skip{
+		border: 2px solid rgb(0, 0, 0);
+		border-radius: 8px;
+		padding: 5px;
+		font-family: 'Balsamiq Sans', cursive;
+		font-size: 24px;
+		//color: #ffff;
+	}
+}
+
+.timer-data {
+
+	&__number{
+		justify-content: center;
+		@include flexbox();
+	}
+
+	&__number-minutes{}
+
+	&__number-separator{}
+
+	&__number-seconds{}
+
+	&__info{
+		font-size: 16px;
+		font-family: 'Balsamiq Sans', cursive;
+		color: #ffff;
+		text-align: center;
+		margin-top: 20px;
+		position: relative;
+		&::after{
+			content: '';
+			top: -15px;
+			left: 50%;
+			transform: translate(-50%, 50%);
+			position: absolute;
+			width: 40px;
+			height: 1px;
+			background-color: #ffff;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		margin-top: 40px;
+		img{
+			max-width: 100%;
+		}
+	}
+}
+
+.timer-data-num{
+	font-size: 96px;
+	font-family: 'Balsamiq Sans', cursive;
+	color: rgb(255, 255, 255);
+}
+
+.timer-buttons{
+	&__btn{
+		width: 20%;
+		text-align: center;
+		cursor: pointer;
+		font-family: 'Balsamiq Sans', cursive;
+		font-size: 32px;
+		//font-weight: 700;
+		color: #ffff;
+		padding: 5px 15px;
+		border: 2px solid rgb(255, 255, 255);
+		border-radius: 10px;
+	}
+}
+
+
+
+
+.content-tasks {
+	&__title{
+		//line-height: 0;
+		margin: -20px auto 0 auto;
+		font-size: 24px;
+		font-family: 'Balsamiq Sans', cursive;
+		background-color: rgb(24, 23, 23);
+		text-align: center;
+		color:rgb(122, 122, 122);
+		display: block;
+		width: 10%;
+	}
+}
+
+
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================

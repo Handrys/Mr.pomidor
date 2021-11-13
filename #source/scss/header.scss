@@ -1,0 +1,240 @@
+//====================================================================================================
+.header {
+	background-color: rgba(0, 0, 0, 0.747);
+
+	&__wrapper {
+
+	}
+
+	&__body {
+		@include flexbox();
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 0;
+		//max-width: 1250px;
+
+	}
+
+	&__column {
+	}
+
+	&__logo {
+		width: 100%;
+		height: 100%;
+		img{
+			max-width: 48px;
+		}
+	}
+
+	&__up {
+	}
+}
+.menu-header {
+	width: 100%;
+	height: 100%;
+	@include flexbox();
+	justify-content: flex-end;
+
+	&__icon {
+		display: none;
+		position: relative;
+		top: 5px;
+		//right: 10px;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 10;
+		span {
+			@include anim(0.3s, 0s);
+			top: 8px;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: rgb(255, 255, 255);
+			&:first-child {
+				top: 0px;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0px;
+			}
+		}
+		&._active {
+			span {
+				@include scale(0);
+				&:first-child {
+					@include rotate(-45deg);
+					top: 8px;
+				}
+				&:last-child {
+					@include rotate(45deg);
+					bottom: 8px;
+				}
+			}
+		}
+	
+	}
+
+	&__menu {
+		width: 100%;
+		z-index: 3;
+		@include flexbox();
+		align-items: center;
+		justify-content: flex-end;
+
+	}
+
+
+	&__list {
+		width: 100%;
+		@include flexbox();
+		justify-content: flex-end;
+		li{
+			margin: 0 20px;
+			&:last-child{
+				background-color: #4d4b4b;
+				border-radius: 28.5px;
+				padding: 0 14px;
+				margin: 0 0 0 10%;
+			}
+		}
+
+	}
+
+	&__link {
+		font-family: 'Balsamiq Sans', cursive;
+		font-size: 18px;
+		line-height: 44px;
+		font-weight: 400;
+		color: #ffffff;
+
+		span {
+			position: relative;
+			display: block;
+			&:after {
+				content: "";
+				position: absolute;
+				left: 50%;
+				width: 0;
+				height: 1px;
+				background-color: #f52500;
+				bottom: 0;
+				@include anim(0.3s, 0s);
+			}
+		}
+		&:hover {
+			color: #f52500;
+			span:after {
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+
+	&__link--circle {
+	}
+}
+
+
+
+//========================================= $md2 992px ===========================================================
+
+
+
+.header {
+
+	&__wrapper {
+	}
+
+	&__body {
+	}
+
+	&__column {
+	}
+
+	&__logo {
+	}
+}
+
+.menu-header {
+
+	&__icon {
+	}
+
+	&__menu {
+	}
+
+	&__list {
+	}
+
+	&__link {
+		font-size: 14px;
+	}
+}
+
+
+
+//========================================= $md3 768px ===========================================================
+@media (max-width: $md3+px) {
+	.header {
+
+		&__wrapper {
+		}
+
+		&__body {
+			margin: 0px 25px 0 25px;
+		}
+
+		&__column {
+		}
+
+		&__logo {
+		}
+	}
+
+	.menu-header {
+
+		&__icon {
+			display: block;
+		}
+
+		&__menu {
+			@include flexbox();
+			align-items:flex-start;
+			position: fixed;
+			height: 100%;
+			top: 0px;
+			background-color: #181717;;
+			padding-top: 30px;
+			overflow: auto;
+			@include anim(0.3s, 0s);
+			//left: 0;
+			right: 0;
+			width: 100%;
+			right: -510%;
+			&._active {
+				@include anim(0.3s, 0s);
+				right: 0px;
+			}
+		}
+
+		&__list {
+			margin-top: 10vh;
+			flex-direction: column;
+			//margin-top: 60px;
+			li {
+				margin: 0 10% 50px 10%;
+				&:last-child{
+					margin: 0 10% 50px 10%;
+				}
+			}
+		}
+
+		&__link {
+			text-align: center;
+			font-size: 24px;
+		}
+	}
+}
+
