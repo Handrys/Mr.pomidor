@@ -23,7 +23,7 @@ if (iconMenu) {
 
 //==================== Настройки таймера ======================
 
-let minutesOptions = '25';  //Всего минут
+let minutesOptions = '2';  //Всего минут
 //let secondsOptions; 
 let smallBreakOptions; //Маленький перерыв (в сек)
 let bigBreakOptions; //Большой перерыв (в сек)
