@@ -393,12 +393,26 @@ body.lock {
 	    justify-content: space-around;
 }
 
+.timer-header__settings {
+	cursor: pointer;
+}
+.timer-header__settings:hover {
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
+}
 .timer-header__skip {
 	border: 2px solid black;
 	border-radius: 8px;
 	padding: 5px;
 	font-family: "Balsamiq Sans", cursive;
 	font-size: 24px;
+	cursor: pointer;
+}
+.timer-header__skip:hover {
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
 }
 
 .timer-data__number {
@@ -454,6 +468,11 @@ body.lock {
 	padding: 5px 15px;
 	border: 2px solid white;
 	border-radius: 10px;
+}
+.timer-buttons__btn:hover {
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
 }
 
 .content-tasks__title {

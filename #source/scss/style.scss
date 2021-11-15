@@ -161,7 +161,10 @@ body {
 
 .timer-header{
 	&__settings{
-		
+		cursor: pointer;
+		&:hover{
+			transform: scale(1.1);
+		}
 	}
 
 	&__skip{
@@ -170,7 +173,11 @@ body {
 		padding: 5px;
 		font-family: 'Balsamiq Sans', cursive;
 		font-size: 24px;
+		cursor: pointer;
 		//color: #ffff;
+		&:hover{
+			transform: scale(1.1);
+		}
 	}
 }
 
@@ -233,6 +240,9 @@ body {
 		padding: 5px 15px;
 		border: 2px solid rgb(255, 255, 255);
 		border-radius: 10px;
+		&:hover{
+			transform: scale(1.1);
+		}
 	}
 }
 
