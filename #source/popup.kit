@@ -1,33 +1,51 @@
-<div class="popup">
-	<div class="popup-table table">
-		<div class="cell">
-			<div class="popup-content">
-				<div class="popup-close"></div>
-				<div class="popup__title"></div>
-				<div class="popup__txt"></div>
-				<form action="#" class="popup-form form">
-					<div class="form-input">
-						<input autocomplete="off" type="text" name="form[]" data-value="" class="input" />
+<div class="popup popup__settings" id="popup-1">
+	<div class="popup__body settings__body">
+		<div class="popup-content settings__content">
+			<div class="settings__content-header">
+				<div class="popup-close close-popup">X</div>
+			</div>
+			<div class="settings__content-block">
+				<form action="" class="settings__content-form settings-form">
+					<div class="settings-form__elements">
+						<div class="settings-form__elem settings-elem">
+							<div class="settings-elem__desc">Время работы:</div>
+							<div class="settings-elem__input">
+								<input type="number">
+								<span>?</span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Большой перерыв:</div>
+							<div class="settings-elem__input">
+								<input type="number">
+								<span>?</span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Помодоро в раунде:</div>
+							<div class="settings-elem__input">
+								<input type="number">
+								<span>?</span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Маленький перерыв:</div>
+							<div class="settings-elem__input">
+								<input type="number">
+								<span>?</span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Звуковое уведомление:</div>
+							<div class="settings-elem__input">
+								<input type="number">
+								<span>?</span>
+							</div>
+						</div>
 					</div>
-					<div class="form-input">
-						<input autocomplete="off" type="text" name="form[]" data-value="" class="input req email" />
-					</div>
-					<div class="form-input">
-						<input autocomplete="off" type="text" name="form[]" data-value="" class="input req" />
-					</div>
-					<div class="form-button">
-						<button type="submit" class="form__btn btn fw"></button>
-					</div>
+					<div class="settings-form__submit"><button>Сохранить</button></div>
 				</form>
 			</div>
-		</div>
-	</div>
-</div>
-<div class="popup popup-video">
-	<div class="popup-table table">
-		<div class="cell">
-			<div class="popup-close"></div>
-			<div class="popup-video__value video"></div>
 		</div>
 	</div>
 </div>

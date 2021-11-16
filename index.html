@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<header class="header">
+<header class="header lock-padding">
 	<div class="container">
 		<div class="header__wrapper">
 			<div class="header__body">
@@ -24,12 +24,12 @@
 					<div class="menu-header__icon">
 						<span></span>
 						<span></span>
-						<span>111</span>
+						<span></span>
 					</div>
 					<nav class="menu-header__menu">
 						<ul class="menu-header__list">
 							<li><a href="" class="menu-header__link" data-scroll="content__cakes"><span>Статистика</span></a></li>
-							<li><a href="" class="menu-header__link" data-scroll="content__order"><span>Настройки</span></a></li>
+							<li><a href="#popup-1" class="menu-header__link popup-link" data-scroll="content__order"><span>Настройки</span></a></li>
 							<li><a href="" class="menu-header__link" data-scroll="other__reviews"><span>Регистрация/Вход</span></a></li></li>
 						</ul>
 					</nav>
@@ -43,7 +43,7 @@
 					<div class="content-timer__body">
 						<div class="content-timer__window">
 							<div class="content-timer__window-header timer-header">
-								<div class="timer-header__settings"><img src="./img/settings.png" alt=""></div>
+								<div class="timer-header__settings"><a class="popup-link" href="#popup-1"><img src="./img/settings.png" alt=""></a></div>
 								<div class="timer-header__skip">Пропустить</div>
 							</div>
 							<div class="content-timer__window-data timer-data">
@@ -52,7 +52,7 @@
 									<div class="timer-data__number-separator timer-data-num">:</div>
 									<div class="timer-data__number-seconds timer-data-num"></div>
 								</div>
-								<div class="timer-data__info">[помидорка]</div>
+								<div class="timer-data__info">помидорка</div>
 								<div class="timer-data__img"><img src="/img/scale.png" alt=""></div>
 							</div>
 							<div class="content-timer__window-buttons timer-buttons">
@@ -78,7 +78,57 @@
 			
 		</div>
 	</div>
-</footer><script src="js/vendors.js"></script>
+</footer><div class="popup popup__settings" id="popup-1">
+	<div class="popup__body settings__body">
+		<div class="popup-content settings__content">
+			<div class="settings__content-header">
+				<div class="popup-close close-popup">X</div>
+			</div>
+			<div class="settings__content-block">
+				<form action="" class="settings__content-form settings-form">
+					<div class="settings-form__elements">
+						<div class="settings-form__elem settings-elem">
+							<div class="settings-elem__desc">Время работы:</div>
+							<div class="settings-elem__input">
+								<input type="number">
+								<span>?</span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Большой перерыв:</div>
+							<div class="settings-elem__input">
+								<input type="number">
+								<span>?</span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Помодоро в раунде:</div>
+							<div class="settings-elem__input">
+								<input type="number">
+								<span>?</span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Маленький перерыв:</div>
+							<div class="settings-elem__input">
+								<input type="number">
+								<span>?</span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Звуковое уведомление:</div>
+							<div class="settings-elem__input">
+								<input type="number">
+								<span>?</span>
+							</div>
+						</div>
+					</div>
+					<div class="settings-form__submit"><button>Сохранить</button></div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div><script src="js/vendors.js"></script>
 <script src="js/main.js"></script>
 <script src="js/custom.js" ></script>
 </body>

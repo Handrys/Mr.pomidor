@@ -40,6 +40,10 @@ body {
 		overflow: hidden;
 	}
 }
+
+body.lock{
+	overflow: hidden;
+}
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 
 //<ОБОЛОЧКА>===========================================================================================================
@@ -87,7 +91,7 @@ body {
 //@import "baguetteBox.scss";
 //@import "pagging.scss";
 //@import "icons.scss";
-//@import "popup.scss";
+@import "popup.scss";
 @import "header.scss";
 @import "footer.scss";
 //@import "home.scss";
@@ -164,6 +168,11 @@ body {
 		cursor: pointer;
 		&:hover{
 			transform: scale(1.1);
+		}
+		img{
+			a{
+				
+			}
 		}
 	}
 
