@@ -556,7 +556,8 @@ body.lock {
 	border-bottom: 1px solid #5a5959;
 }
 .content__info {
-	margin-top: 120px;
+	margin-top: 60px;
+	padding-bottom: 70px;
 }
 
 .content-timer__body {
@@ -698,4 +699,36 @@ body.lock {
 	color: #7a7a7a;
 	display: block;
 	width: 10%;
+}
+
+.content-info__body {
+	padding: 0 10%;
+}
+.content-info__title {
+	font-size: 26px;
+	font-weight: bold;
+	font-family: "Balsamiq Sans", cursive;
+	text-align: center;
+	color: #7a7a7a;
+}
+.content-info__text {
+	margin-top: 20px;
+	font-size: 16px;
+	line-height: 22px;
+	font-family: "Balsamiq Sans", cursive;
+	text-align: center;
+	color: #5e5d5d;
+	position: relative;
+}
+.content-info__text::after {
+	background-color: #444343;
+	-webkit-transform: translate(-50%, 50%);
+	    -ms-transform: translate(-50%, 50%);
+	        transform: translate(-50%, 50%);
+	position: absolute;
+	content: "";
+	bottom: -26px;
+	left: 50%;
+	width: 36px;
+	height: 2px;
 }

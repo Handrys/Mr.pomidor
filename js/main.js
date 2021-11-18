@@ -72,7 +72,7 @@ function start(options){
 	let seconds_interval = setInterval(secondsTimer, 1000);
 
 	function minutesTimer(){
-		template(minutes);
+		//template(minutes);
 		minutes = minutes -1;
 	}
 	function secondsTimer(){
@@ -85,7 +85,7 @@ function start(options){
 				timerOffSound();
 				checkRound();
 			}
-			seconds = 59;
+			seconds = 60;
 		}
 	}
 

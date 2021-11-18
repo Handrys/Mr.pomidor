@@ -123,7 +123,8 @@ body.lock{
 	}
 
 	&__info {
-		margin-top: 120px;
+		margin-top: 60px;
+		padding-bottom: 70px;
 	}
 }
 .content-timer {
@@ -269,6 +270,43 @@ body.lock{
 		color:rgb(122, 122, 122);
 		display: block;
 		width: 10%;
+	}
+}
+
+
+
+.content-info {
+
+	&__body {
+		padding: 0 10%;
+	}
+
+	&__title {
+		font-size: 26px;
+		font-weight: bold;
+		font-family: 'Balsamiq Sans', cursive;
+		text-align: center;
+		color:rgb(122, 122, 122);
+	}
+
+	&__text {
+		margin-top: 20px;
+		font-size: 16px;
+		line-height: 22px;
+		font-family: 'Balsamiq Sans', cursive;
+		text-align: center;
+		color:rgb(94, 93, 93);
+		position: relative;
+		&::after{
+			background-color:rgb(68, 67, 67);
+			transform: translate(-50%, 50%);
+			position: absolute;
+			content: '';
+			bottom: -26px;
+			left: 50%;
+			width: 36px;
+			height: 2px;
+		}
 	}
 }
 
