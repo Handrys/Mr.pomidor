@@ -1,6 +1,6 @@
 //====================================================================================================
 .popup {
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0, 0, 0, 0.719);
 	//display: none;
 	position: fixed!important;
 	top: 0;
@@ -30,7 +30,7 @@
 	transition: all 0.8s ease 0s;
 }
 .popup-content {
-	background-color: rgb(15, 15, 15);
+	background-color: rgb(14, 13, 13);
 	color: black;
 	max-width: 800px;
 	//padding: 20px;
@@ -73,25 +73,18 @@
 
 	&__content {
 		position: relative;
-		padding: 20px 20px 60px 20px;
-		border: 2px solid rgb(71, 68, 68);
-		&::after, &::before{
-			position: absolute;
-			content: '';
-			background-color: rgb(71, 68, 68);
-		}	
+		padding: 20px 20px 0 20px;
+		//border: 2px solid rgb(71, 68, 68);
+		box-shadow: 0px 0px 8px 15px rgba(24, 23, 23, 0.897);
 		&::after{
 			top: 40px;
 			left: 0;
 			width: 100%;
 			height: 2px;
-		}
-		&::before{
-			bottom: 80px;
-			left: 0;
-			width: 100%;
-			height: 2px;
-		}
+			position: absolute;
+			content: '';
+			background-color: rgb(71, 68, 68);
+		}	
 	}
 
 	&__content-header {
@@ -126,7 +119,7 @@
 		justify-content: space-between;
 		margin: 30px 0;
 		width: 100%;
-		min-width: 400px;
+		min-width: 300px;
 	}
 
 	&__submit {
@@ -149,17 +142,20 @@
 
 	&__desc {
 		color: #fff;
-		font-size: 24px;
-		width: 65%;
+		font-size: 20px;
+		//width: 65%;
 		display: block;
 		text-align: center;
+		&:last-child{
+			font-size: 16px;
+		}
 	}
 
 	&__input {
 		display: flex;
 		input{
 			width: 70px;
-			height: 32px;
+			height: 25px;
 			font-size: 18px;
 			font-weight: bold;
 			padding: 0 5px;
@@ -167,18 +163,31 @@
 		}
 		span{
 			display: block;
-			height: 100%;
 			font-size: 18px;
 			color: white;
 			background-color: rgb(61, 61, 61);
-			padding: 5px 10px;
+			//padding: 5px 10px;
 			cursor: pointer;
+			height: 25px;
+			width: 25px;
+			display: flex;
+    	    align-items: center;
+    		justify-content: center;
+    		font-size: 18px;
+			
 		}
+		
 	}
+	
 
 	&__prompt {
 	}
+
 }
+
+
+
+
 
 
 
@@ -186,76 +195,71 @@
 
 
 //=======================================
-/* .popup {
+@media (max-width: $md4+px) {
+	.popup {
 
-	&__settings {
-	}
+		&__settings {
+		}
 
-	&__body {
-	}
+		&__body {
+		}
 }
 .settings {
 
-	&__body {
-	}
+		&__body {
+		}
 
-	&__content {
-	}
+		&__content {
+			padding: 20px 20px 40px 20px;
+			&::before{
+				bottom: 60px;
+			}
+		}
 
-	&__content-header {
-	}
+		&__content-header {
+		}
 
-	&__content-block {
-	}
+		&__content-block {
+		}
 
-	&__content-form {
-	}
+		&__content-form {
+		}
 }
-
 .settings-form {
 
-	&__column {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-		min-width: 400px;
-	}
-
-	&__descriptions {
-	}
-
-	&__inputs {
-	}
-
-	&__submit {
-	}
-}
-.settings-descriptions {
-
-	&__description {
-		color: #fff;
-		font-size: 24px;
-		margin: 30px 0;
-		display: block;
-		width: 70%;
-	}
-}
-
-.setting-inputs {
-	&__input{
-		margin: 30px 0;
-		input{
-			width: 70px;
-			height: 30px;
-			font-size: 18px;
+		&__elements {
 		}
-		span{
-			font-size: 18px;
-			color: white;
-			background-color: rgb(61, 61, 61);
-			padding: 5px 10px;
+
+		&__elem {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-width: 100%;
+			margin: 18px 0;
 		}
-	}
+
+		&__submit {
+			button{
+				height: 30px;
+			}
+		}
 }
- */
+.settings-elem {
+
+		&__desc {
+			font-size: 18px;
+			white-space: nowrap;
+			text-align: center;
+			width: 100%;
+		}
+
+		&__input {
+			margin-top: 6px;
+			input{
+				height: auto;
+			}
+		}
+}
+
+}
 

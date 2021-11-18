@@ -26,10 +26,12 @@ if (iconMenu) {
 let currentRound = 'pomodoro';  // {pomodoro, smallBreak, bigBreak}
 let pomMinutesOpt = '25';  //Длительность помидора (в мин)
 //let secondsOptions; 
-let smallBreakOpt = '1'; //Маленький перерыв (в мин)
+let smallBreakOpt = '2'; //Маленький перерыв (в мин)
 let bigBreakOpt = '15'; //Большой перерыв (в мин)
 let roundsOpt = 5; //Кол-во раундов до большого перерыва (5)
-let soundOpt; //True/False
+let soundOpt = true; //True/False
+
+let timerNum;
 
 let totalRounds = 0; //Пройдено раундов (в начале игры - 0)
 
@@ -37,11 +39,21 @@ let bckgRed = 'linear-gradient(45deg, rgba(114, 3, 3, 0.822) 2%, rgb(199, 49, 35
 let bckgBlue = 'linear-gradient(45deg, rgba(46, 3, 114, 0.822) 2%, rgb(35, 133, 199) 90%)';
 
 //==================== Таймер ======================
-let minutes = pomMinutesOpt;
+//let minutes = pomMinutesOpt;
 let seconds = '0';
+
+//===== (Проверка цифры) ======
+
+function checkNumber(){
+	if (currentRound == 'pomodoro') timerNum = pomMinutesOpt;
+	if (currentRound == 'smallBreak') timerNum = smallBreakOpt;
+	if (currentRound == 'bigBreak') timerNum = bigBreakOpt;
+	template(timerNum)
+}
 
 //===== (отрисовка на странице) ======
 function template(value){
+
 	if(value < 10 && value.toString().split('').length == 1){
 		value = '0' + value;
 	}
@@ -54,9 +66,8 @@ function template(value){
 
 //====== Сам таймер (запускается на кнопку "Старт") ======
 function start(options){
-	minutes = options - 1;
-	seconds = '60';
-	console.log(minutes)
+	let minutes = options -1;
+	seconds = '59';
 	let minutes_interval = setInterval(minutesTimer, 60000);
 	let seconds_interval = setInterval(secondsTimer, 1000);
 
@@ -65,15 +76,16 @@ function start(options){
 		minutes = minutes -1;
 	}
 	function secondsTimer(){
-		seconds = seconds -1;
 		template(minutes);
+		seconds = seconds -1;
 		if (seconds <= 0) {
 			if (minutes <= 0){
 				clearInterval(minutes_interval);
 				clearInterval(seconds_interval);
+				timerOffSound();
 				checkRound();
 			}
-			seconds = 60;
+			seconds = 59;
 		}
 	}
 
@@ -86,17 +98,17 @@ function start(options){
 
 //===== Смена раундов (помидор, перерыв) =====
 function checkRound(){
-	if (totalRounds < roundsOpt +3){
+	if (totalRounds < roundsOpt * 2 - 2){  // ОШИБКА - Неправильно работает при изменении настроек
 		if (currentRound == 'pomodoro'){
 			currentRound = 'smallBreak';
 			document.querySelector('.content-timer__window').style.background = bckgBlue;
 			document.querySelector('.timer-data__info').innerHTML = '[перерыв]';
-			template(smallBreakOpt);
+			checkNumber()
 		} else{ 
 			currentRound = 'pomodoro';
 			document.querySelector('.content-timer__window').style.background = bckgRed;
 			document.querySelector('.timer-data__info').innerHTML = '[помидорка]';
-			template(pomMinutesOpt);
+			checkNumber()
 		}	
 		totalRounds++;
 	} else {
@@ -104,11 +116,21 @@ function checkRound(){
 		document.querySelector('.content-timer__window').style.background = bckgBlue;
 		document.querySelector('.timer-data__info').innerHTML = '[большой перерыв]';
 		totalRounds = 0;
-		template(bigBreakOpt);
+		checkNumber()
 	}
 }
 
-template(minutes);
+function timerOffSound(){
+	var audio = new Audio('../sounds/timer-off.mp3');
+	if(soundOpt) audio.play();
+}
+
+function timerStartSound(){
+	var audio = new Audio('../sounds/timer-start.mp3');
+	if(soundOpt) audio.play();
+}
+
+checkNumber()
 
 
 //========= События на кнопки ==============
@@ -117,7 +139,7 @@ document.querySelector('.timer-start').addEventListener('click', () => {
 	if (currentRound == 'pomodoro') start(pomMinutesOpt);
 	if (currentRound == 'smallBreak') start(smallBreakOpt);
 	if (currentRound == 'bigBreak') start(bigBreakOpt);
-
+	timerStartSound();
 });
 
 document.querySelector('.timer-stop').addEventListener('click', () => {
@@ -128,8 +150,35 @@ document.querySelector('.timer-header__skip').addEventListener('click', () => {
 	seconds = 0;
 	checkRound();
 });
-//=============================================================================================================
 
+
+
+//============================================== НАСТРОЙКИ ТАЙМЕРА ============================================================
+
+let pomMinutes_input = document.querySelector('.input-pom-minutes');
+let bigBreak_input = document.querySelector('.input-big-break'); 
+let smallBreak_input = document.querySelector('.input-small-break') 
+let rounds_input = document.querySelector('.input-rounds'); 
+let soundOpt_input = document.querySelector('.input-checkbox-sound'); 
+let enter_input = document.querySelector('.input-enter'); 
+let close_popup = document.querySelector('.close-popup'); 
+
+
+pomMinutes_input.value = pomMinutesOpt;
+bigBreak_input.value = bigBreakOpt;
+smallBreak_input.value = smallBreakOpt;
+rounds_input.value = roundsOpt;
+soundOpt_input.checked = soundOpt;
+
+close_popup.addEventListener('click', () => {
+	pomMinutesOpt = pomMinutes_input.value;
+	bigBreakOpt = bigBreak_input.value;
+	smallBreakOpt = smallBreak_input.value;
+	roundsOpt = rounds_input.value;
+	soundOpt = soundOpt_input.checked;
+	
+	checkNumber();
+})
 const popupLinks = document.querySelectorAll('.popup-link');
 //const body = document.querySelector('body');
 const lockPadding = document.querySelectorAll('.lock-padding');
