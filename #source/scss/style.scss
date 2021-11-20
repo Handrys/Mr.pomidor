@@ -14,11 +14,11 @@
 //</Иконочные шрифты>==========================================================================================
 
 //<Шрифт по умолчанию>==========================================================================================
-$fontfamily: "";
+$fontfamily: 'Balsamiq Sans', cursive;
 //</Шрифт по умолчанию>==========================================================================================
 
 //</ШРИФТЫ>=======================================================================================================
-
+$COLOR-GREY: rgb(122, 122, 122);
 //<ПЕРЕМЕННЫЕ>===========================================================================================================
 $minwidth: 320px;
 $mw: 1170;
@@ -116,7 +116,8 @@ body.lock{
 	}
 
 	&__tasks {
-		height: 400px;
+		width: 100%;
+		height: 100%;
 		margin-top: 120px;
 		border-top: 1px solid rgb(90, 89, 89);
 		border-bottom: 1px solid rgb(90, 89, 89);
@@ -236,22 +237,27 @@ body.lock{
 	font-size: 96px;
 	font-family: 'Balsamiq Sans', cursive;
 	color: rgb(255, 255, 255);
+	@media (max-width: $md4+px) {
+		font-size: 78px;
+	}
 }
 
 .timer-buttons{
 	&__btn{
-		width: 20%;
+		padding: 7px 40px;
 		text-align: center;
 		cursor: pointer;
 		font-family: 'Balsamiq Sans', cursive;
-		font-size: 32px;
+		font-size: 28px;
 		//font-weight: 700;
 		color: #ffff;
-		padding: 5px 15px;
-		border: 2px solid rgb(255, 255, 255);
+		border: 1px solid rgb(255, 255, 255);
 		border-radius: 10px;
 		&:hover{
 			transform: scale(1.1);
+		}
+		@media (max-width: $md4+px) {
+			padding: 5px 18px;
 		}
 	}
 }
@@ -259,19 +265,213 @@ body.lock{
 
 
 
+
+
 .content-tasks {
-	&__title{
-		//line-height: 0;
-		margin: -20px auto 0 auto;
-		font-size: 24px;
-		font-family: 'Balsamiq Sans', cursive;
-		background-color: rgb(24, 23, 23);
-		text-align: center;
-		color:rgb(122, 122, 122);
-		display: block;
-		width: 10%;
+
+	&__body {
+
+	}
+
+	&__title {
+				//line-height: 0;
+				margin: -20px auto 0 auto;
+				font-size: 24px;
+				font-family: 'Balsamiq Sans', cursive;
+				background-color: rgb(24, 23, 23);
+				text-align: center;
+				color: $COLOR-GREY;
+				display: block;
+				width: 10%;
+	}
+
+	&__block {
+		width: 100%;
+		max-width: 850px;
+		margin: 0 auto;
+		color: $COLOR-GREY;
+		padding: 40px 0 120px 0;
 	}
 }
+
+.tasks-block {
+
+	&__new {
+		@include flexbox();
+		justify-content: space-between;
+		border: 1px solid $COLOR-GREY;
+		border-radius: 5px;
+		padding: 16px;
+		height: 60px;
+	}
+
+	&__list {
+		margin-top: 20px;
+		border: 1px solid $COLOR-GREY;
+		border-radius: 5px;
+		padding: 16px;
+		height: 100%;
+		min-height: 380px;
+	}
+}
+.tasks-new {
+
+	&__text {
+		font-size: 18px;
+		@include flexbox;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: $md3+px) {
+			display: none;
+		}
+	}
+
+	&__name {
+		background-color: rgb(59, 59, 59);
+		color: $COLOR-GREY;
+		font-size: 16px;
+		width: 25%;
+		height: 100%;
+		padding: 0 5px;
+		@media (max-width: $md3+px) {
+			width: 30%;
+		}
+	}
+
+	&__description {
+		background-color: rgb(59, 59, 59);
+		color: $COLOR-GREY;
+		font-size: 16px;
+		width: 50%;
+		height: 100%;
+		padding: 0 5px;
+		@media (max-width: $md3+px) {
+			width: 60%;
+		}
+	}
+
+	&__add {
+		font-size: 24px;
+		font-weight: bold;
+		width: 25px;
+		height: 100%;
+		background-color: rgb(43, 41, 41);
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+	}
+}
+.tasks-list {
+
+	&__elem {
+		@include flexbox();
+		justify-content: space-between;
+		border: 1px solid $COLOR-GREY;
+		border-radius: 5px;
+		padding: 10px;
+		margin-top: 20px;
+		&:first-child{
+			margin-top: 0;
+		}
+		@media (max-width: $md4+px) {
+			flex-direction: column;
+    		align-items: center;
+		}
+	}
+}
+.tasks-list-elem {
+
+	&__number {
+		@include flexbox;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: $md4+px) {	
+			width: 100%;
+			display: block;
+			text-align: start;
+		}
+	}
+	&__name {
+		width: 25%;
+		@include flexbox;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: $md3+px) {
+			width: 20%;
+		}
+		@media (max-width: $md4+px) {	
+			width: 100%;
+		}
+	}
+
+	&__desription {
+		width: 50%;
+		height: 100%;
+		line-height: 20px;
+		@media (max-width: $md3+px) {
+			width: 42%;
+		}
+		@media (max-width: $md4+px) {	
+			margin: 16px 0;
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	&__time {
+		width: 7%;
+		@include flexbox;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__buttons {
+		@include flexbox();
+		align-items: center;
+		justify-content: center;
+		justify-content: flex-end;
+		width: 10%;
+
+		@media (max-width: $md4+px) {	
+			width: 100%;
+			align-items: center;
+			justify-content: center;
+			margin-top: 10px;
+		}	
+	}
+
+	&__button {
+		border: 1px solid $COLOR-GREY;
+		//padding: auto;
+		@include flexbox;
+		justify-content: center;
+		align-items: center;
+		width: 25px;
+		height: 100%;
+		max-height: 25px;
+		min-width: 25px;
+	}
+
+	&__button-edit {
+	}
+
+	&__button-del {
+		margin-left: 5px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -298,7 +498,7 @@ body.lock{
 		color:rgb(94, 93, 93);
 		position: relative;
 		&::after{
-			background-color:rgb(68, 67, 67);
+			background-color: $COLOR-GREY;
 			transform: translate(-50%, 50%);
 			position: absolute;
 			content: '';
@@ -312,4 +512,4 @@ body.lock{
 
 
 
-//</ОСНОВНОЙ БЛОК>====================================================================================================
+//<АДАПТИВ 990>====================================================================================================

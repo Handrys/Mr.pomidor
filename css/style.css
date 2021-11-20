@@ -39,7 +39,7 @@ body {
 
 body {
 	line-height: 1;
-	font-family: "";
+	font-family: "Balsamiq Sans", cursive;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -48,7 +48,7 @@ body {
 input,
 button,
 textarea {
-	font-family: "";
+	font-family: "Balsamiq Sans", cursive;
 }
 
 input::-ms-clear {
@@ -354,7 +354,6 @@ body.lock {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	font-size: 0;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
@@ -376,7 +375,6 @@ body.lock {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	font-size: 0;
 	-webkit-box-pack: end;
 	    -ms-flex-pack: end;
 	        justify-content: flex-end;
@@ -431,7 +429,6 @@ body.lock {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	font-size: 0;
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
@@ -444,7 +441,6 @@ body.lock {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	font-size: 0;
 	-webkit-box-pack: end;
 	    -ms-flex-pack: end;
 	        justify-content: flex-end;
@@ -503,7 +499,6 @@ body.lock {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		font-size: 0;
 		-webkit-box-align: start;
 		    -ms-flex-align: start;
 		        align-items: flex-start;
@@ -550,7 +545,8 @@ body.lock {
 	margin-top: 100px;
 }
 .content__tasks {
-	height: 400px;
+	width: 100%;
+	height: 100%;
 	margin-top: 120px;
 	border-top: 1px solid #5a5959;
 	border-bottom: 1px solid #5a5959;
@@ -577,7 +573,6 @@ body.lock {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	font-size: 0;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	    -ms-flex-direction: column;
@@ -590,7 +585,6 @@ body.lock {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	font-size: 0;
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
@@ -603,7 +597,6 @@ body.lock {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	font-size: 0;
 	-ms-flex-pack: distribute;
 	    justify-content: space-around;
 }
@@ -637,7 +630,6 @@ body.lock {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	font-size: 0;
 }
 .timer-data__info {
 	font-size: 16px;
@@ -672,22 +664,31 @@ body.lock {
 	font-family: "Balsamiq Sans", cursive;
 	color: white;
 }
+@media (max-width: 479.98px) {
+	.timer-data-num {
+		font-size: 78px;
+	}
+}
 
 .timer-buttons__btn {
-	width: 20%;
+	padding: 7px 40px;
 	text-align: center;
 	cursor: pointer;
 	font-family: "Balsamiq Sans", cursive;
-	font-size: 32px;
+	font-size: 28px;
 	color: #ffff;
-	padding: 5px 15px;
-	border: 2px solid white;
+	border: 1px solid white;
 	border-radius: 10px;
 }
 .timer-buttons__btn:hover {
 	-webkit-transform: scale(1.1);
 	    -ms-transform: scale(1.1);
 	        transform: scale(1.1);
+}
+@media (max-width: 479.98px) {
+	.timer-buttons__btn {
+		padding: 5px 18px;
+	}
 }
 
 .content-tasks__title {
@@ -699,6 +700,237 @@ body.lock {
 	color: #7a7a7a;
 	display: block;
 	width: 10%;
+}
+.content-tasks__block {
+	width: 100%;
+	max-width: 850px;
+	margin: 0 auto;
+	color: #7a7a7a;
+	padding: 40px 0 120px 0;
+}
+
+.tasks-block__new {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	border: 1px solid #7a7a7a;
+	border-radius: 5px;
+	padding: 16px;
+	height: 60px;
+}
+.tasks-block__list {
+	margin-top: 20px;
+	border: 1px solid #7a7a7a;
+	border-radius: 5px;
+	padding: 16px;
+	height: 100%;
+	min-height: 380px;
+}
+
+.tasks-new__text {
+	font-size: 18px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+@media (max-width: 767.98px) {
+	.tasks-new__text {
+		display: none;
+	}
+}
+.tasks-new__name {
+	background-color: #3b3b3b;
+	color: #7a7a7a;
+	font-size: 16px;
+	width: 25%;
+	height: 100%;
+	padding: 0 5px;
+}
+@media (max-width: 767.98px) {
+	.tasks-new__name {
+		width: 30%;
+	}
+}
+.tasks-new__description {
+	background-color: #3b3b3b;
+	color: #7a7a7a;
+	font-size: 16px;
+	width: 50%;
+	height: 100%;
+	padding: 0 5px;
+}
+@media (max-width: 767.98px) {
+	.tasks-new__description {
+		width: 60%;
+	}
+}
+.tasks-new__add {
+	font-size: 24px;
+	font-weight: bold;
+	width: 25px;
+	height: 100%;
+	background-color: #2b2929;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.tasks-list__elem {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	border: 1px solid #7a7a7a;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 20px;
+}
+.tasks-list__elem:first-child {
+	margin-top: 0;
+}
+@media (max-width: 479.98px) {
+	.tasks-list__elem {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+	}
+}
+
+.tasks-list-elem__number {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+@media (max-width: 479.98px) {
+	.tasks-list-elem__number {
+		width: 100%;
+		display: block;
+		text-align: start;
+	}
+}
+.tasks-list-elem__name {
+	width: 25%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+@media (max-width: 767.98px) {
+	.tasks-list-elem__name {
+		width: 20%;
+	}
+}
+@media (max-width: 479.98px) {
+	.tasks-list-elem__name {
+		width: 100%;
+	}
+}
+.tasks-list-elem__desription {
+	width: 50%;
+	height: 100%;
+	line-height: 20px;
+}
+@media (max-width: 767.98px) {
+	.tasks-list-elem__desription {
+		width: 42%;
+	}
+}
+@media (max-width: 479.98px) {
+	.tasks-list-elem__desription {
+		margin: 16px 0;
+		width: 100%;
+		text-align: center;
+	}
+}
+.tasks-list-elem__time {
+	width: 7%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.tasks-list-elem__buttons {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+	width: 10%;
+}
+@media (max-width: 479.98px) {
+	.tasks-list-elem__buttons {
+		width: 100%;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		margin-top: 10px;
+	}
+}
+.tasks-list-elem__button {
+	border: 1px solid #7a7a7a;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	width: 25px;
+	height: 100%;
+	max-height: 25px;
+	min-width: 25px;
+}
+.tasks-list-elem__button-del {
+	margin-left: 5px;
 }
 
 .content-info__body {
@@ -721,7 +953,7 @@ body.lock {
 	position: relative;
 }
 .content-info__text::after {
-	background-color: #444343;
+	background-color: #7a7a7a;
 	-webkit-transform: translate(-50%, 50%);
 	    -ms-transform: translate(-50%, 50%);
 	        transform: translate(-50%, 50%);
