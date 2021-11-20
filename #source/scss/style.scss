@@ -172,8 +172,10 @@ body.lock{
 			transform: scale(1.1);
 		}
 		img{
-			a{
-				
+		}
+		@media (max-width: $md4+px) {
+			img{
+				max-width: 75%;
 			}
 		}
 	}
@@ -188,6 +190,9 @@ body.lock{
 		//color: #ffff;
 		&:hover{
 			transform: scale(1.1);
+		}
+		@media (max-width: $md4+px) {
+			font-size: 18px;
 		}
 	}
 }
@@ -359,6 +364,7 @@ body.lock{
 		@include flexbox();
 		justify-content: center;
 		align-items: center;
+		cursor: pointer;
 	}
 }
 .tasks-list {
@@ -389,6 +395,7 @@ body.lock{
 			width: 100%;
 			display: block;
 			text-align: start;
+			font-size: 16px;
 		}
 	}
 	&__name {
@@ -401,6 +408,8 @@ body.lock{
 		}
 		@media (max-width: $md4+px) {	
 			width: 100%;
+			font-size: 16px;
+    		font-weight: bold;
 		}
 	}
 
@@ -450,6 +459,7 @@ body.lock{
 		height: 100%;
 		max-height: 25px;
 		min-width: 25px;
+		cursor: pointer;
 	}
 
 	&__button-edit {

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 * {
@@ -308,6 +309,42 @@ body.lock {
 	    -ms-flex-pack: center;
 	        justify-content: center;
 	font-size: 18px;
+	position: relative;
+}
+.settings-elem__input span p {
+	font-size: 13px;
+	z-index: 50;
+	content: "test";
+	position: absolute;
+	/* Абсолютное позиционирование */
+	width: 100%;
+	max-width: 240px;
+	min-width: 150px;
+	/* Ширина подсказки */
+	left: 0px;
+	top: 25px;
+	/* Положение подсказки */
+	background: #3989c9;
+	/* Синий цвет фона */
+	color: #fff;
+	/* Цвет текста */
+	padding: 0.5em;
+	/* Поля вокруг текста */
+	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	/* Параметры тени */
+	pointer-events: none;
+	/* Подсказка */
+	opacity: 0;
+	/* Подсказка невидима */
+	-webkit-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+	/* Время появления подсказки */
+}
+.settings-elem__input span:hover p {
+	opacity: 1;
+	/* Показываем подсказку */
 }
 @media (max-width: 479.98px) {
 	.settings__content {
@@ -609,6 +646,11 @@ body.lock {
 	    -ms-transform: scale(1.1);
 	        transform: scale(1.1);
 }
+@media (max-width: 479.98px) {
+	.timer-header__settings img {
+		max-width: 75%;
+	}
+}
 .timer-header__skip {
 	border: 2px solid black;
 	border-radius: 8px;
@@ -621,6 +663,11 @@ body.lock {
 	-webkit-transform: scale(1.1);
 	    -ms-transform: scale(1.1);
 	        transform: scale(1.1);
+}
+@media (max-width: 479.98px) {
+	.timer-header__skip {
+		font-size: 18px;
+	}
 }
 
 .timer-data__number {
@@ -788,6 +835,7 @@ body.lock {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
+	cursor: pointer;
 }
 
 .tasks-list__elem {
@@ -833,6 +881,7 @@ body.lock {
 		width: 100%;
 		display: block;
 		text-align: start;
+		font-size: 16px;
 	}
 }
 .tasks-list-elem__name {
@@ -855,6 +904,8 @@ body.lock {
 @media (max-width: 479.98px) {
 	.tasks-list-elem__name {
 		width: 100%;
+		font-size: 16px;
+		font-weight: bold;
 	}
 }
 .tasks-list-elem__desription {
@@ -928,6 +979,7 @@ body.lock {
 	height: 100%;
 	max-height: 25px;
 	min-width: 25px;
+	cursor: pointer;
 }
 .tasks-list-elem__button-del {
 	margin-left: 5px;
