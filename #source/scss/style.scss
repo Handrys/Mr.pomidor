@@ -399,7 +399,10 @@ body.lock{
 		}
 	}
 	&__name {
+		//padding: auto 0;
+		font-size: 16px;
 		width: 25%;
+		color: $COLOR-GREY;
 		@include flexbox;
 		justify-content: center;
 		align-items: center;
@@ -414,6 +417,7 @@ body.lock{
 	}
 
 	&__desription {
+		color: $COLOR-GREY;
 		width: 50%;
 		height: 100%;
 		line-height: 20px;
@@ -460,13 +464,46 @@ body.lock{
 		max-height: 25px;
 		min-width: 25px;
 		cursor: pointer;
+		position: relative;
+		p{
+			font-size: 16px;
+			z-index: 50;
+			content: 'test';
+			position: absolute; /* Абсолютное позиционирование */
+			width: 100%;
+			max-width: 240px;
+			min-width: 150px; /* Ширина подсказки */
+			left: 0px; top: 25px; /* Положение подсказки */
+			background: #3989c9; /* Синий цвет фона */
+			color: #fff; /* Цвет текста */
+			padding: 0.5em; /* Поля вокруг текста */
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+			pointer-events: none; /* Подсказка */
+			opacity: 0; /* Подсказка невидима */
+			transition: 1s; /* Время появления подсказки */
+		}
+		&:hover p {
+			opacity: 1; /* Показываем подсказку */
+		}
 	}
 
 	&__button-edit {
+		&:hover{
+			background-color: rgb(56, 0, 146);
+		}
+	}
+
+	&__button-check{
+		margin: 0 5px;
+		&:hover{
+			background-color: greenyellow;
+		}
 	}
 
 	&__button-del {
-		margin-left: 5px;
+		&:hover{
+			background-color: rgb(230, 47, 47);
+		}
 	}
 }
 

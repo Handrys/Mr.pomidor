@@ -50,6 +50,16 @@ input,
 button,
 textarea {
 	font-family: "Balsamiq Sans", cursive;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+textarea {
+	resize: none;
+	white-space: normal;
+	text-align: justify;
+	-moz-text-align-last: center;
+	/* Firefox 12+ */
+	text-align-last: center;
 }
 
 input::-ms-clear {
@@ -885,7 +895,9 @@ body.lock {
 	}
 }
 .tasks-list-elem__name {
+	font-size: 16px;
 	width: 25%;
+	color: #7a7a7a;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -909,6 +921,7 @@ body.lock {
 	}
 }
 .tasks-list-elem__desription {
+	color: #7a7a7a;
 	width: 50%;
 	height: 100%;
 	line-height: 20px;
@@ -980,9 +993,54 @@ body.lock {
 	max-height: 25px;
 	min-width: 25px;
 	cursor: pointer;
+	position: relative;
 }
-.tasks-list-elem__button-del {
-	margin-left: 5px;
+.tasks-list-elem__button p {
+	font-size: 16px;
+	z-index: 50;
+	content: "test";
+	position: absolute;
+	/* Абсолютное позиционирование */
+	width: 100%;
+	max-width: 240px;
+	min-width: 150px;
+	/* Ширина подсказки */
+	left: 0px;
+	top: 25px;
+	/* Положение подсказки */
+	background: #3989c9;
+	/* Синий цвет фона */
+	color: #fff;
+	/* Цвет текста */
+	padding: 0.5em;
+	/* Поля вокруг текста */
+	-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	/* Параметры тени */
+	pointer-events: none;
+	/* Подсказка */
+	opacity: 0;
+	/* Подсказка невидима */
+	-webkit-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+	/* Время появления подсказки */
+}
+.tasks-list-elem__button:hover p {
+	opacity: 1;
+	/* Показываем подсказку */
+}
+.tasks-list-elem__button-edit:hover {
+	background-color: #380092;
+}
+.tasks-list-elem__button-check {
+	margin: 0 5px;
+}
+.tasks-list-elem__button-check:hover {
+	background-color: greenyellow;
+}
+.tasks-list-elem__button-del:hover {
+	background-color: #e62f2f;
 }
 
 .content-info__body {
