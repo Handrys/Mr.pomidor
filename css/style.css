@@ -990,6 +990,7 @@ body.lock {
 }
 .tasks-list-elem__button {
 	border: 1px solid #7a7a7a;
+	background-color: #1a1919;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1001,15 +1002,13 @@ body.lock {
 	        align-items: center;
 	width: 25px;
 	height: 25px;
-	max-height: 25px;
-	min-width: 25px;
 	cursor: pointer;
 	position: relative;
 }
 .tasks-list-elem__button input {
 	width: 25px;
 	height: 100%;
-	background-color: #7a7a7a;
+	cursor: pointer;
 }
 .tasks-list-elem__button p {
 	font-size: 16px;
@@ -1053,11 +1052,11 @@ body.lock {
 		margin: 0 10px;
 	}
 }
+.tasks-list-elem__button-edit {
+	margin: 0 5px;
+}
 .tasks-list-elem__button-edit:hover {
 	background-color: #380092;
-}
-.tasks-list-elem__button-check {
-	margin: 0 5px;
 }
 .tasks-list-elem__button-check:hover {
 	background-color: greenyellow;
