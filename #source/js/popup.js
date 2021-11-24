@@ -45,6 +45,11 @@ function popupOpen(currentPopup) {
         }
       });
     }
+    let iconMenu = document.querySelector(".menu-header__icon");
+    let menuBody = document.querySelector(".menu-header__menu");
+  /*   if (iconMenu.contains('_active')){
+      console.log('есть')
+    } */
 }
 
 function popupClose(popupActive, doUnlock = true){

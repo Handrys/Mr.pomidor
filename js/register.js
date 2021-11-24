@@ -13,12 +13,12 @@ document.querySelector('.menu-header__link-settings').style.display = 'none';
 let iconMenu = document.querySelector(".menu-header__icon");
 let body = document.querySelector("body");
 let menuBody = document.querySelector(".menu-header__menu");
+let menuLink = document.querySelector(".menu-header__link");
 if (iconMenu) {
 	iconMenu.addEventListener("click", function (e) {
 		iconMenu.classList.toggle("_active");
 		body.classList.toggle("lock");
 		menuBody.classList.toggle("_active");
-		//console.log('click');
 	});
 }
 //==================== Настройки таймера ======================
@@ -110,6 +110,11 @@ function popupOpen(currentPopup) {
         }
       });
     }
+    let iconMenu = document.querySelector(".menu-header__icon");
+    let menuBody = document.querySelector(".menu-header__menu");
+  /*   if (iconMenu.contains('_active')){
+      console.log('есть')
+    } */
 }
 
 function popupClose(popupActive, doUnlock = true){

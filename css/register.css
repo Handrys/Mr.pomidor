@@ -389,9 +389,6 @@ body.lock {
 	.settings-elem__input {
 		margin-top: 6px;
 	}
-	.settings-elem__input input {
-		height: auto;
-	}
 }
 .header {
 	background-color: rgba(0, 0, 0, 0.747);
