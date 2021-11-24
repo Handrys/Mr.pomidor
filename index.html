@@ -68,31 +68,37 @@
 					<div class="content-tasks__body">
 						<div class="content-tasks__title">Задачи</div>
 						<div class="content-tasks__block tasks-block">
-							<form class="tasks-block__new tasks-new">
-								<div class="tasks-new__text">Новая задача</div>
-								<input class="tasks-new__name" value="Имя">
-								<input class="tasks-new__description" value="Описание...">
-								<div class="tasks-new__add">+</div>
+							<form class="tasks-block__new tasks-new tasks-head tasks-head-active">
+								<div class="tasks-new__text tasks-input-text">Новая задач:</div>
+								<input class="tasks-new__name tasks-input-name" placeholder="Название">
+								<input class="tasks-new__description tasks-input-description" placeholder="Описание">
+								<div class="tasks-new__add tasks-add">+</div>
+							</form>
+							<form class="tasks-block__edit tasks-edit tasks-head">
+								<div class="tasks-edit__text tasks-input-text">Ред. задачи:</div>
+								<input class="tasks-edit__name tasks-input-name" value="" placeholder="Новое название">
+								<input class="tasks-edit__description tasks-input-description" placeholder="Описание">
+								<div class="tasks-edit__add tasks-add">✔</div>
 							</form>
 							<form class="tasks-block__list tasks-list">
 								<div class="tasks-list__elem tasks-list-elem">
-									<div class="tasks-list-elem__number">1.</div>
+									<div class="tasks-list-elem__number">*</div>
 									<div class="tasks-list-elem__name">Написать костыльный код</div>
 									<div class="tasks-list-elem__desription">Необходимо потратить миллион минут и секунд, и в итоге получить - ЭТО</div>
 									<div class="tasks-list-elem__time">23:30</div>
 									<div class="tasks-list-elem__buttons">
-										<div class="tasks-list-elem__button tasks-list-elem__button-edit">Р<p>Редактировать</p></div>
-										<div class="tasks-list-elem__button tasks-list-elem__button-check">✔<p>Отменить выполненной</p></div>
+										<div class="tasks-list-elem__button tasks-list-elem__button-edit tasks-button-edit">Р<p>Редактировать</p></div>
+										<div class="tasks-list-elem__button tasks-list-elem__button-check"><input type="checkbox" value=""><p>Отменить выполненной</p></div>
 										<div class="tasks-list-elem__button tasks-list-elem__button-del">Х<p>Удалить</p></div>
 									</div>
 								</div>
 								<div class="tasks-list__elem tasks-list-elem">
-									<div class="tasks-list-elem__number">2.</div>
+									<div class="tasks-list-elem__number">*</div>
 									<div class="tasks-list-elem__name">Написать костыльный код</div>
 									<div class="tasks-list-elem__desription">Необходимо потратить миллион минут и секунд, и в итоге получить - ЭТОНеобходимо потратить миллион минут и секунд, и в итоге получить - ЭТО</div>
 									<div class="tasks-list-elem__time">23:30</div>
 									<div class="tasks-list-elem__buttons">
-										<div class="tasks-list-elem__button tasks-list-elem__button-edit">Р<p>Редактировать</p></div>
+										<div class="tasks-list-elem__button tasks-list-elem__button-edit tasks-button-edit">Р<p>Редактировать</p></div>
 										<div class="tasks-list-elem__button tasks-list-elem__button-check">✔<p>Отменить выполненной</p></div>
 										<div class="tasks-list-elem__button tasks-list-elem__button-del">Х<p>Удалить</p></div>
 									</div>

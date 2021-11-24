@@ -179,6 +179,99 @@ close_popup.addEventListener('click', () => {
 	
 	checkNumber();
 })
+
+
+
+
+//============================ РЕДАКТИРОВАНИЕ ЗАДАЧИ  ===============================================================
+
+let editTasks = function () {
+	let editBtn = document.querySelectorAll('.tasks-button-edit');
+	let editEnterBtn = document.querySelector('.tasks-edit__add');
+	let tasksEdit = document.querySelector('.tasks-edit');
+	let tasksNew = document.querySelector('.tasks-new');
+	let tasksBlockActive = 'tasks-head-active';//tasks-add
+
+	let currentItem;
+	let taskName = '';
+	let taskDescription = '';
+	let inputTaskName = document.querySelector('.tasks-edit__name');
+	let inputTaskDescription = document.querySelector('.tasks-edit__description');
+
+	editBtn.forEach(item => {
+		item.addEventListener('click', () => {
+			showEdit();
+			taskLoad(item);
+		});
+	});
+
+	editEnterBtn.addEventListener('click', () => {
+		showNew();
+		taskSave();
+	})
+
+	function showEdit() {
+		if (tasksNew.classList.contains(tasksBlockActive)){
+			tasksEdit.classList.add(tasksBlockActive);
+			tasksNew.classList.remove(tasksBlockActive);
+		}
+	}
+
+	function showNew() {
+		if (tasksEdit.classList.contains(tasksBlockActive)){
+			tasksNew.classList.add(tasksBlockActive);
+			tasksEdit.classList.remove(tasksBlockActive);
+		}
+	}
+
+	function taskLoad(item){
+		inputTaskName.value = item.parentNode.parentNode.querySelector('.tasks-list-elem__name').innerHTML;
+		inputTaskDescription.value = item.parentNode.parentNode.querySelector('.tasks-list-elem__desription').innerHTML;
+		currentItem = item;
+	}
+
+	function taskSave(){
+		currentItem.parentNode.parentNode.querySelector('.tasks-list-elem__name').innerHTML = inputTaskName.value;
+		currentItem.parentNode.parentNode.querySelector('.tasks-list-elem__desription').innerHTML = inputTaskDescription.value;
+	}
+}
+
+
+editTasks();
+
+
+let addTasks = function () {
+	let addTask = document.querySelector('.tasks-new__add');
+	let inputTaskName = document.querySelector('.tasks-new__name');
+	let inputTaskDescription = document.querySelector('.tasks-new__description');
+
+	addTask.addEventListener('click', () => {
+		createTask();
+	})
+
+	function createTask() {
+		let date = new Date();
+		var articleDiv = document.querySelector(".tasks-list__elem");
+		var newArticleDiv = articleDiv.cloneNode(true);
+
+		newArticleDiv.classList.add('tasks-list-elem');
+		newArticleDiv.querySelector(".tasks-list-elem__name")
+		newArticleDiv.querySelector(".tasks-list-elem__desription")
+
+		newArticleDiv.querySelector(".tasks-list-elem__name").innerHTML = inputTaskName.value;
+		newArticleDiv.querySelector(".tasks-list-elem__desription").innerHTML = inputTaskDescription.value;
+		newArticleDiv.querySelector(".tasks-list-elem__time").innerHTML = date.getHours() + ':' +  date.getMinutes();
+		document.querySelector('.tasks-block__list').appendChild(newArticleDiv);
+	}
+}
+
+addTasks();
+
+
+
+//==================================================
+
+
 const popupLinks = document.querySelectorAll('.popup-link');
 //const body = document.querySelector('body');
 const lockPadding = document.querySelectorAll('.lock-padding');
