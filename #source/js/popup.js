@@ -31,6 +31,13 @@ if (popupCloseIcon.length > 0) {
 
 
 function popupOpen(currentPopup) {
+  let iconMenu = document.querySelector(".menu-header__icon");
+  let menuBody = document.querySelector(".menu-header__menu");
+  let active = document.querySelector('._active');
+  if (iconMenu.contains(active)){ 
+    iconMenu.classList.remove('_active');
+    menuBody.classList.remove('_active');
+  }
   if (currentPopup && unlock) {
     const popupActive = document.querySelector('.popup.open');
     if (popupActive) {
@@ -45,11 +52,6 @@ function popupOpen(currentPopup) {
         }
       });
     }
-    let iconMenu = document.querySelector(".menu-header__icon");
-    let menuBody = document.querySelector(".menu-header__menu");
-  /*   if (iconMenu.contains('_active')){
-      console.log('есть')
-    } */
 }
 
 function popupClose(popupActive, doUnlock = true){
