@@ -1,13 +1,4 @@
 
-//
-var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
-if (isMobile.any() || isMobile.iOS()) {
-	document.body.classList.add('_touch')
-} else {
-	document.body.classList.add('_pc');
-}
-/* new WOW().init(); */
-
 /* ============================МЕНЮ-БУРГЕР=========================================== */
 let iconMenu = document.querySelector(".menu-header__icon");
 let body = document.querySelector("body");
@@ -20,8 +11,6 @@ if (iconMenu) {
 		//console.log('click');
 	});
 }
-
-
 //==================== Настройки таймера ======================
 let currentRound = 'pomodoro';  // {pomodoro, smallBreak, bigBreak}
 let pomMinutesOpt = '25';  //Длительность помидора (в мин)
@@ -37,6 +26,43 @@ let totalRounds = 0; //Пройдено раундов (в начале игры
 
 let bckgRed = 'linear-gradient(45deg, rgba(114, 3, 3, 0.822) 2%, rgb(199, 49, 35) 90%)';
 let bckgBlue = 'linear-gradient(45deg, rgba(46, 3, 114, 0.822) 2%, rgb(35, 133, 199) 90%)';
+
+
+
+let pomMinutes_input = document.querySelector('.input-pom-minutes');
+let bigBreak_input = document.querySelector('.input-big-break'); 
+let smallBreak_input = document.querySelector('.input-small-break') 
+let rounds_input = document.querySelector('.input-rounds'); 
+let soundOpt_input = document.querySelector('.input-checkbox-sound'); 
+let enter_input = document.querySelector('.input-enter'); 
+let close_popup = document.querySelector('.close-popup'); 
+
+
+pomMinutes_input.value = pomMinutesOpt;
+bigBreak_input.value = bigBreakOpt;
+smallBreak_input.value = smallBreakOpt;
+rounds_input.value = roundsOpt;
+soundOpt_input.checked = soundOpt;
+
+close_popup.addEventListener('click', () => {
+	pomMinutesOpt = pomMinutes_input.value;
+	bigBreakOpt = bigBreak_input.value;
+	smallBreakOpt = smallBreak_input.value;
+	roundsOpt = rounds_input.value;
+	soundOpt = soundOpt_input.checked;
+	
+	checkNumber();
+})
+//
+var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
+if (isMobile.any() || isMobile.iOS()) {
+	document.body.classList.add('_touch')
+} else {
+	document.body.classList.add('_pc');
+}
+/* new WOW().init(); */
+
+
 
 //==================== Таймер ======================
 //let minutes = pomMinutesOpt;
@@ -153,32 +179,7 @@ document.querySelector('.timer-header__skip').addEventListener('click', () => {
 
 
 
-//============================================== НАСТРОЙКИ ТАЙМЕРА ============================================================
 
-let pomMinutes_input = document.querySelector('.input-pom-minutes');
-let bigBreak_input = document.querySelector('.input-big-break'); 
-let smallBreak_input = document.querySelector('.input-small-break') 
-let rounds_input = document.querySelector('.input-rounds'); 
-let soundOpt_input = document.querySelector('.input-checkbox-sound'); 
-let enter_input = document.querySelector('.input-enter'); 
-let close_popup = document.querySelector('.close-popup'); 
-
-
-pomMinutes_input.value = pomMinutesOpt;
-bigBreak_input.value = bigBreakOpt;
-smallBreak_input.value = smallBreakOpt;
-rounds_input.value = roundsOpt;
-soundOpt_input.checked = soundOpt;
-
-close_popup.addEventListener('click', () => {
-	pomMinutesOpt = pomMinutes_input.value;
-	bigBreakOpt = bigBreak_input.value;
-	smallBreakOpt = smallBreak_input.value;
-	roundsOpt = rounds_input.value;
-	soundOpt = soundOpt_input.checked;
-	
-	checkNumber();
-})
 
 
 
@@ -364,5 +365,9 @@ function bodyUnLock(){
     unlock = true;
   }, timeout)
 }
+
+
+
+
 
 
