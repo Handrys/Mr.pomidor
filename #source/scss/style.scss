@@ -545,8 +545,9 @@ body.lock{
 	}
 
 	&__button-check{
+		border: none;
 		&:hover{
-			background-color: greenyellow;
+			//background-color: greenyellow;
 		}
 	}
 
