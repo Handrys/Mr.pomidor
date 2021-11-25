@@ -118,7 +118,7 @@ document.querySelector('.timer-stop').addEventListener('click', () => {
 document.querySelector('.timer-header__skip').addEventListener('click', () => {
 	seconds = 0;
 	checkRound();
-	document.querySelector('.timer-start').setAttribute('disabled', false);
+	document.querySelector('.timer-start').removeAttribute('disabled');
 });
 
 
@@ -185,10 +185,33 @@ let editTasks = function () {
 editTasks();
 
 
+
+
+let removeTasks = function() {
+	let removeBtn = document.querySelectorAll('.tasks-button-del');
+
+	removeBtn.forEach(item => {
+		item.addEventListener('click', () => {
+			removeElem(item);
+		});
+	});
+
+	function removeElem(item) {
+		let test = item.parentNode.parentNode;
+		test.remove();
+	}
+}
+
+removeTasks();
+
+
 let addTasks = function () {
 	let addTask = document.querySelector('.tasks-new__add');
 	let inputTaskName = document.querySelector('.tasks-new__name');
 	let inputTaskDescription = document.querySelector('.tasks-new__description');
+
+	var articleDiv = document.querySelector(".tasks-list__elem");
+	//var newArticleDiv = articleDiv.cloneNode(true);
 
 	addTask.addEventListener('click', () => {
 		createTask();
@@ -196,7 +219,6 @@ let addTasks = function () {
 
 	function createTask() {
 		let date = new Date();
-		var articleDiv = document.querySelector(".tasks-list__elem");
 		var newArticleDiv = articleDiv.cloneNode(true);
 
 		newArticleDiv.classList.add('tasks-list-elem');
@@ -208,12 +230,10 @@ let addTasks = function () {
 		newArticleDiv.querySelector(".tasks-list-elem__time").innerHTML = date.getHours() + ':' +  date.getMinutes();
 		newArticleDiv.querySelector(".tasks-list-elem__button-check").querySelector('input').checked = false;
 		document.querySelector('.tasks-block__list').appendChild(newArticleDiv);
+		removeTasks();// Зачем мы это здесь вызываем? Иначе, новую добавленную задачу нельзя будет удалить.
 	}
 }
 
 addTasks();
-
-
-
 //==================================================
 

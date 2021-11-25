@@ -38,5 +38,20 @@ close_popup.addEventListener('click', () => {
 	roundsOpt = rounds_input.value;
 	soundOpt = soundOpt_input.checked;
 	
-	checkNumber();
+	checkNumber();	
 })
+
+
+
+/* var maxLength = 8; // or whatever you want
+var fieldNames = ["fname","sname","houseno", "ad1", "city", "postcode", "mobno"];
+var invalidFields = fieldNames.find(function(fieldName) {
+    var val = document.getElementById(fieldName).value;
+    return val == null || val.length == 0 || val.length > maxLength;
+});
+if (invalidFields.length) {
+    alert("Please fill ALL Required Fields (no more than " + maxLength + " chars)");
+    return false;
+} else {
+    return true;
+} */
