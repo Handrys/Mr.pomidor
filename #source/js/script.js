@@ -1,10 +1,5 @@
 //
-var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
-if (isMobile.any() || isMobile.iOS()) {
-	document.body.classList.add('_touch')
-} else {
-	document.body.classList.add('_pc');
-}
+
 /* new WOW().init(); */
 
 
@@ -207,6 +202,7 @@ let addTasks = function () {
 		newArticleDiv.querySelector(".tasks-list-elem__name").innerHTML = inputTaskName.value;
 		newArticleDiv.querySelector(".tasks-list-elem__desription").innerHTML = inputTaskDescription.value;
 		newArticleDiv.querySelector(".tasks-list-elem__time").innerHTML = date.getHours() + ':' +  date.getMinutes();
+		newArticleDiv.querySelector(".tasks-list-elem__button-check").querySelector('input').checked = false;
 		document.querySelector('.tasks-block__list').appendChild(newArticleDiv);
 	}
 }
