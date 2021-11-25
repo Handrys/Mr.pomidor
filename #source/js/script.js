@@ -87,12 +87,12 @@ function checkRound(){
 }
 
 function timerOffSound(){
-	var audio = new Audio('../sounds/timer-off.mp3');
+	var audio = new Audio('./sounds/timer-off.mp3');
 	if(soundOpt) audio.play();
 }
 
 function timerStartSound(){
-	var audio = new Audio('../sounds/timer-start.mp3');
+	var audio = new Audio('./sounds/timer-start.mp3');
 	if(soundOpt) audio.play();
 }
 
