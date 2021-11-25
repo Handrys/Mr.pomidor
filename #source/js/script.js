@@ -50,6 +50,7 @@ function start(options){
 				clearInterval(seconds_interval);
 				timerOffSound();
 				checkRound();
+				document.querySelector('.timer-start').removeAttribute('disabled');
 			}
 			seconds = 60;
 		}
@@ -58,6 +59,7 @@ function start(options){
 	document.querySelector('.timer-header__skip').addEventListener('click', () => {
 		clearInterval(minutes_interval);
 		clearInterval(seconds_interval);
+		document.querySelector('.timer-start').removeAttribute('disabled');
 	});
 }
 
@@ -106,6 +108,7 @@ document.querySelector('.timer-start').addEventListener('click', () => {
 	if (currentRound == 'smallBreak') start(smallBreakOpt);
 	if (currentRound == 'bigBreak') start(bigBreakOpt);
 	timerStartSound();
+	document.querySelector('.timer-start').setAttribute('disabled', true);
 });
 
 document.querySelector('.timer-stop').addEventListener('click', () => {
@@ -115,6 +118,7 @@ document.querySelector('.timer-stop').addEventListener('click', () => {
 document.querySelector('.timer-header__skip').addEventListener('click', () => {
 	seconds = 0;
 	checkRound();
+	document.querySelector('.timer-start').setAttribute('disabled', false);
 });
 
 

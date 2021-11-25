@@ -251,9 +251,14 @@ body.lock{
 		//font-weight: 700;
 		color: #ffff;
 		border: 1px solid rgb(255, 255, 255);
+		background-color: rgba(128, 128, 128, 0);
 		border-radius: 10px;
+		opacity: 1;
 		&:hover{
 			transform: scale(1.1);
+		}
+		&:disabled{
+			opacity: 0.5;
 		}
 		@media (max-width: $md4+px) {
 			padding: 5px 18px;

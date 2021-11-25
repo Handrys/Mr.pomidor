@@ -731,12 +731,17 @@ body.lock {
 	font-size: 28px;
 	color: #ffff;
 	border: 1px solid white;
+	background-color: rgba(128, 128, 128, 0);
 	border-radius: 10px;
+	opacity: 1;
 }
 .timer-buttons__btn:hover {
 	-webkit-transform: scale(1.1);
 	    -ms-transform: scale(1.1);
 	        transform: scale(1.1);
+}
+.timer-buttons__btn:disabled {
+	opacity: 0.5;
 }
 @media (max-width: 479.98px) {
 	.timer-buttons__btn {
