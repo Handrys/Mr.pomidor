@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+<header class="header lock-padding">
+	<div class="container">
+		<div class="header__wrapper">
+			<div class="header__body">
+				<div class="header__column">
+					<a href="" class="header__logo"><img src="./img/logo.png" alt=""></a>
+				</div>
+				<div class="header__column menu-header">
+					<div class="menu-header__icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<nav class="menu-header__menu">
+						<ul class="menu-header__list">
+							<li><a href="index.html" class="menu-header__link" data-scroll="content__cakes"><span>Главная</span></a></li>
+							<li><a href="" class="menu-header__link" data-scroll="content__cakes"><span>Статистика</span></a></li>
+							<li><a href="#popup-1" class="menu-header__link menu-header__link-settings  popup-link" data-scroll="content__order"><span>Настройки</span></a></li>
+							<li><a href="login.html" class="menu-header__link" data-scroll="other__reviews"><span>Регистрация/Вход</span></a></li></li>
+						</ul>
+					</nav>
+				</div>
+		</div>
+	</div>
+</header>    <div class="wrapper">
+        <div class="wrapper__content content__wrapper">
+            <div class="content__registration content-registration">
+                <div class="container">
+                    <div class="content-registration__body">
+                        <form action="#" class="content-registration__form registration-form">
+                            <div class="registration-form__title">Регистрация</div>
+                            <div class="registration-form__elem registration-form__username">
+                                <label for="username">Имя пользователя: </label>
+                                <input type="text" name="size" id="username" value="">                              
+                            </div>
+                            <div class="registration-form__elem registration-form__password">
+                                <label for="username">Пароль: </label>
+                                <input type="text" name="size" id="username" value="">                              
+                            </div>
+                            <div class="registration-form__elem registration-form__password">
+                                <label for="username">Подтвердите пароль: </label>
+                                <input type="text" name="size" id="username" value="">                              
+                            </div>
+                            <div class="registration-form__btn"><button>Зарегестрироваться</button></div>
+                            <div class="registration-form__subtext"><a href="login.html">У меня уже есть аккаунт.</a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popup popup__settings" id="popup-1">
+	<div class="popup__body settings__body">
+		<div class="popup-content settings__content">
+			<div class="settings__content-header">
+				<div class="popup-close close-popup">X</div>
+			</div>
+			<div class="settings__content-block">
+				<form action="" class="settings__content-form settings-form">
+					<div class="settings-form__elements">
+						<div class="settings-form__elem settings-elem">
+							<div class="settings-elem__desc">Время работы:</div>
+							<div class="settings-elem__input">
+								<input class="input-pom-minutes" type="number" max="4">
+								<span>?<p>Длительность одного "помодорро" в минутах.Стандартно - 25.</p></span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Большой перерыв:</div>
+							<div class="settings-elem__input">
+								<input class="input-big-break" type="number">
+								<span>?<p>Большой перерыв наступает каждые 5 раундов.Можно изменить в настройках</p></span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Помодоро в раунде:</div>
+							<div class="settings-elem__input">
+								<input class="input-rounds" type="number">
+								<span>?<p>Кол-во раундов до большого перерыва</p></span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Маленький перерыв:</div>
+							<div class="settings-elem__input">
+								<input class="input-small-break" type="number">
+								<span>?<p>Маленький перерыв следует после каждого "помодорро"</p></span>
+							</div>
+						</div>
+						<div class="settings-form__elem">
+							<div class="settings-elem__desc">Звуковое уведомление:</div>
+							<div class="settings-elem__input">
+								<input class="input-checkbox-sound" type="checkbox">
+								<span>?<p>Просто звуки таймера.Лучше включить, так точно не прозеваешь время...</p></span>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="settings-form__submit"><button class="input-enter">Сохранить</button></div> -->
+				</form>
+			</div>
+		</div>
+	</div>
+</div><script src="js/vendors.js"></script>
+<script src="js/register.js"></script>
+<script src="js/custom.js" ></script>
+</body>
+</html>

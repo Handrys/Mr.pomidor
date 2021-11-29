@@ -41,6 +41,14 @@ input,
 button,
 textarea {
 	font-family: $fontfamily;
+	//background-color: rgba(0, 0, 0, 0); 
+}
+textarea{
+	resize: none;
+	/* white-space: normal;
+    text-align: justify;
+    -moz-text-align-last: center; /* Firefox 12+ */
+    text-align-last: center; 
 }
 input::-ms-clear {
 	display: none;

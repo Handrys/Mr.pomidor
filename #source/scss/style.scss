@@ -2,23 +2,17 @@
 @import "mixins.scss";
 //</МИКСИНЫ>===============================================================================================
 
-//<ШРИФТЫ>===============================================================================================
-
-//<Подключаем шрифты>=======================================================================================
-
 //</Подключаем шрифты>=======================================================================================
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-//<Иконочные шрифты>==========================================================================================
+//<шрифты>==========================================================================================
 
-//</Иконочные шрифты>==========================================================================================
 
 //<Шрифт по умолчанию>==========================================================================================
-$fontfamily: "";
+$fontfamily: 'Balsamiq Sans', cursive;
 //</Шрифт по умолчанию>==========================================================================================
 
-//</ШРИФТЫ>=======================================================================================================
-
+$COLOR-GREY: rgb(122, 122, 122);
 //<ПЕРЕМЕННЫЕ>===========================================================================================================
 $minwidth: 320px;
 $mw: 1170;
@@ -39,6 +33,10 @@ body {
 	&.lock {
 		overflow: hidden;
 	}
+}
+
+body.lock{
+	overflow: hidden;
 }
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 
@@ -75,7 +73,7 @@ body {
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
-//@import "forms.scss";
+@import "forms.scss";
 
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 
@@ -87,7 +85,7 @@ body {
 //@import "baguetteBox.scss";
 //@import "pagging.scss";
 //@import "icons.scss";
-//@import "popup.scss";
+@import "popup.scss";
 @import "header.scss";
 @import "footer.scss";
 //@import "home.scss";
@@ -112,14 +110,16 @@ body {
 	}
 
 	&__tasks {
-		height: 400px;
+		width: 100%;
+		height: 100%;
 		margin-top: 120px;
 		border-top: 1px solid rgb(90, 89, 89);
 		border-bottom: 1px solid rgb(90, 89, 89);
 	}
 
 	&__info {
-		margin-top: 120px;
+		margin-top: 60px;
+		padding-bottom: 70px;
 	}
 }
 .content-timer {
@@ -137,7 +137,7 @@ body {
 		//border: 3px solid rgb(75, 74, 74);
 		border-radius: 10px;
 		margin: 0 auto;
-		max-width: 850px;
+		max-width: 900px;
 		height: 400px;
 		@include flexbox();
 		flex-direction: column;
@@ -161,7 +161,17 @@ body {
 
 .timer-header{
 	&__settings{
-		
+		cursor: pointer;
+		&:hover{
+			transform: scale(1.1);
+		}
+		img{
+		}
+		@media (max-width: $md4+px) {
+			img{
+				max-width: 75%;
+			}
+		}
 	}
 
 	&__skip{
@@ -170,7 +180,14 @@ body {
 		padding: 5px;
 		font-family: 'Balsamiq Sans', cursive;
 		font-size: 24px;
+		cursor: pointer;
 		//color: #ffff;
+		&:hover{
+			transform: scale(1.1);
+		}
+		@media (max-width: $md4+px) {
+			font-size: 18px;
+		}
 	}
 }
 
@@ -219,40 +236,378 @@ body {
 	font-size: 96px;
 	font-family: 'Balsamiq Sans', cursive;
 	color: rgb(255, 255, 255);
+	@media (max-width: $md4+px) {
+		font-size: 78px;
+	}
 }
 
 .timer-buttons{
 	&__btn{
-		width: 20%;
+		padding: 7px 40px;
 		text-align: center;
 		cursor: pointer;
 		font-family: 'Balsamiq Sans', cursive;
-		font-size: 32px;
+		font-size: 28px;
 		//font-weight: 700;
 		color: #ffff;
-		padding: 5px 15px;
-		border: 2px solid rgb(255, 255, 255);
+		border: 1px solid rgb(255, 255, 255);
+		background-color: rgba(128, 128, 128, 0);
 		border-radius: 10px;
+		opacity: 1;
+		&:hover{
+			transform: scale(1.1);
+		}
+		&:disabled{
+			opacity: 0.5;
+		}
+		@media (max-width: $md4+px) {
+			padding: 5px 18px;
+		}
 	}
 }
+
+
 
 
 
 
 .content-tasks {
-	&__title{
-		//line-height: 0;
-		margin: -20px auto 0 auto;
-		font-size: 24px;
-		font-family: 'Balsamiq Sans', cursive;
-		background-color: rgb(24, 23, 23);
-		text-align: center;
-		color:rgb(122, 122, 122);
-		display: block;
-		width: 10%;
+
+	&__body {
+
+	}
+
+	&__title {
+				//line-height: 0;
+				margin: -20px auto 0 auto;
+				font-size: 24px;
+				font-family: 'Balsamiq Sans', cursive;
+				background-color: rgb(24, 23, 23);
+				text-align: center;
+				color: $COLOR-GREY;
+				display: block;
+				width: 112px;
+	}
+
+	&__block {
+		width: 100%;
+		max-width: 900px;
+		margin: 0 auto;
+		color: $COLOR-GREY;
+		padding: 40px 0 120px 0;
+	}
+}
+
+.tasks-block {
+
+	&__new {
+		display: none;
+	}
+
+	&__edit { // он же head
+		display: none;
+	}
+
+	&__list { // он же head
+		margin-top: 20px;
+		border: 1px solid $COLOR-GREY;
+		border-radius: 5px;
+		padding: 16px;
+		height: 100%;
+		min-height: 380px;
+	}
+}
+
+.tasks-head-active{
+	@include flexbox();
+	justify-content: space-between;
+	border: 1px solid $COLOR-GREY;
+	border-radius: 5px;
+	padding: 16px;
+	height: 60px;
+}
+
+.tasks-new {
+
+	&__text {
+	
+	}
+
+	&__name {
+
+	}
+
+	&__description {
+
+	}
+
+	&__add {
+
+	}
+}
+
+.tasks-input-text {
+	font-size: 18px;
+	@include flexbox;
+	justify-content: center;
+	align-items: center;
+	@media (max-width: $md3+px) {
+		display: none;
+	}
+}
+.tasks-input-name {
+	background-color: rgb(59, 59, 59);
+	color: $COLOR-GREY;
+	font-size: 16px;
+	width: 25%;
+	height: 100%;
+	padding: 0 5px;
+	@media (max-width: $md3+px) {
+		width: 30%;
+	}
+}
+.tasks-input-description {
+	background-color: rgb(59, 59, 59);
+	color: $COLOR-GREY;
+	font-size: 16px;
+	width: 50%;
+	height: 100%;
+	padding: 0 5px;
+	@media (max-width: $md3+px) {
+		width: 60%;
+	}
+}
+.tasks-add {
+	font-size: 24px;
+	font-weight: bold;
+	width: 25px;
+	height: 100%;
+	background-color: rgb(43, 41, 41);
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	&:hover{
+		border: 1px solid rgb(158, 154, 154);
+	}
+}
+
+.tasks-edit {
+
+	&__text {
+	}
+
+	&__name {
+	}
+
+	&__description {
+	}
+
+	&__add {
+	}
+}
+
+.tasks-list {
+
+	&__elem {
+		@include flexbox();
+		justify-content: space-between;
+		border: 1px solid $COLOR-GREY;
+		border-radius: 5px;
+		padding: 10px;
+		margin-top: 20px;
+		//overflow: hidden;
+		&:first-child{
+			margin-top: 0;
+		}
+		@media (max-width: $md3+px) {
+			flex-direction: column;
+    		align-items: center;
+		}
+	}
+}
+.tasks-list-elem {
+
+	&__number {
+		@include flexbox;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: $md3+px) {	
+			width: 100%;
+			display: block;
+			text-align: start;
+			font-size: 16px;
+		}
+	}
+	&__name {
+		//padding: auto 0;
+		font-size: 16px;
+		width: 25%;
+		color: $COLOR-GREY;
+		@include flexbox;
+		justify-content: center;
+		overflow: hidden;
+		align-items: center;
+		white-space: normal;	
+/* 		@media (max-width: $md3+px) {
+			width: 20%;
+		} */
+		@media (max-width: $md3+px) {	
+			width: 100%;
+			font-size: 16px;
+    		font-weight: bold;
+		}
+	}
+
+	&__desription {
+		color: $COLOR-GREY;
+		width: 40%;
+		height: 100%;
+		overflow: hidden;
+		white-space: normal;	
+		line-height: 20px;
+	/* 	@media (max-width: $md3+px) {
+			width: 42%;
+		} */
+		@media (max-width: $md3+px) {	
+			margin: 16px 0;
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	&__time {
+		width: 7%;
+		@include flexbox;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__buttons {
+		@include flexbox();
+		align-items: center;
+		justify-content: center;
+		justify-content: flex-end;
+		//width: 10%;
+
+		@media (max-width: $md3+px) {	
+			width: 100%;
+			align-items: center;
+			justify-content: center;
+			margin-top: 10px;
+		}	
+	}
+
+	&__button {
+		border: 1px solid $COLOR-GREY;
+		background-color: rgb(26, 25, 25);
+		//padding: auto;
+		@include flexbox;
+		justify-content: center;
+		align-items: center;
+		width: 25px;
+		height: 25px;
+		cursor: pointer;
+		position: relative;
+		input{
+			width: 25px;
+			height: 100%;
+			cursor: pointer;
+		}
+		p{
+			font-size: 16px;
+			z-index: 50;
+			content: 'test';
+			position: absolute; /* Абсолютное позиционирование */
+			width: 100%;
+			max-width: 240px;
+			min-width: 150px; /* Ширина подсказки */
+			left: 0px; top: 25px; /* Положение подсказки */
+			background: #3989c9; /* Синий цвет фона */
+			color: #fff; /* Цвет текста */
+			padding: 0.5em; /* Поля вокруг текста */
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+			pointer-events: none; /* Подсказка */
+			opacity: 0; /* Подсказка невидима */
+			transition: 1s; /* Время появления подсказки */
+		}
+		&:hover p {
+			opacity: 1; /* Показываем подсказку */
+		}
+
+		@media (max-width: $md3+px) {
+			width: 35px;
+			height: 35px;
+			margin: 0 10px;
+		}
+	}
+
+	&__button-edit {
+		margin: 0 5px;
+		&:hover{
+			background-color: rgb(56, 0, 146);
+		}
+	}
+
+	&__button-check{
+		//border: none;
+		&:hover{
+			//background-color: greenyellow;
+		}
+	}
+
+	&__button-del {
+		&:hover{
+			background-color: rgb(230, 47, 47);
+		}
 	}
 }
 
 
 
-//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+
+
+
+
+
+
+.content-info {
+
+	&__body {
+		padding: 0 10%;
+	}
+
+	&__title {
+		font-size: 26px;
+		font-weight: bold;
+		font-family: 'Balsamiq Sans', cursive;
+		text-align: center;
+		color:rgb(122, 122, 122);
+	}
+
+	&__text {
+		margin-top: 20px;
+		font-size: 16px;
+		line-height: 22px;
+		font-family: 'Balsamiq Sans', cursive;
+		text-align: center;
+		color:rgb(94, 93, 93);
+		position: relative;
+		&::after{
+			background-color: $COLOR-GREY;
+			transform: translate(-50%, 50%);
+			position: absolute;
+			content: '';
+			bottom: -26px;
+			left: 50%;
+			width: 36px;
+			height: 2px;
+		}
+	}
+}
+
+
+
+//>====================================================================================================
+

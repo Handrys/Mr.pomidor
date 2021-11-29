@@ -21,7 +21,7 @@
 					<div class="content-timer__body">
 						<div class="content-timer__window">
 							<div class="content-timer__window-header timer-header">
-								<div class="timer-header__settings"><img src="./img/settings.png" alt=""></div>
+								<div class="timer-header__settings"><a class="popup-link" href="#popup-1"><img src="./img/settings.png" alt=""></a></div>
 								<div class="timer-header__skip">Пропустить</div>
 							</div>
 							<div class="content-timer__window-data timer-data">
@@ -31,11 +31,11 @@
 									<div class="timer-data__number-seconds timer-data-num"></div>
 								</div>
 								<div class="timer-data__info">помидорка</div>
-								<div class="timer-data__img"><img src="/img/scale.png" alt=""></div>
+								<div class="timer-data__img"><img src="./img/scale.png" alt=""></div>
 							</div>
 							<div class="content-timer__window-buttons timer-buttons">
-								<div class="timer-buttons__btn timer-start">Старт</div>
-								<div class="timer-buttons__btn timer-stop">Стоп</div>
+								<button class="timer-buttons__btn timer-start">Старт</и>
+								<button class="timer-buttons__btn timer-stop">Стоп</button>
 							</div>
 						</div>
 					</div>
@@ -45,12 +45,50 @@
 				<div class="container">
 					<div class="content-tasks__body">
 						<div class="content-tasks__title">Задачи</div>
+						<div class="content-tasks__block tasks-block">
+							<form class="tasks-block__new tasks-new tasks-head tasks-head-active">
+								<div class="tasks-new__text tasks-input-text">Новая задач:</div>
+								<input class="tasks-new__name tasks-input-name" placeholder="Название">
+								<input class="tasks-new__description tasks-input-description" placeholder="Описание">
+								<div class="tasks-new__add tasks-add">+</div>
+							</form>
+							<form class="tasks-block__edit tasks-edit tasks-head">
+								<div class="tasks-edit__text tasks-input-text">Ред. задачи:</div>
+								<input class="tasks-edit__name tasks-input-name" value="" placeholder="Новое название">
+								<input class="tasks-edit__description tasks-input-description" placeholder="Описание">
+								<div class="tasks-edit__add tasks-add">✔</div>
+							</form>
+							<form class="tasks-block__list tasks-list">
+								<div class="tasks-list__elem tasks-list-elem">
+									<div class="tasks-list-elem__number">*</div>
+									<div class="tasks-list-elem__name">Тестовая задача</div>
+									<div class="tasks-list-elem__desription">Эта задача создана высшими силами. Пришла пора сделать это и тебе!</div>
+									<div class="tasks-list-elem__time">23:30</div>
+									<div class="tasks-list-elem__buttons">
+										<div class="tasks-list-elem__button tasks-list-elem__button-check"><input type="checkbox" value="" class=""><p>Отменить выполненной</p></div>
+										<div class="tasks-list-elem__button tasks-list-elem__button-edit tasks-button-edit">Р<p>Редактировать</p></div>
+										<div class="tasks-list-elem__button tasks-list-elem__button-del tasks-button-del">Х<p>Удалить</p></div>
+									</div>
+								</div>
+			
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="content__info"></div>
+			<div class="content__info">
+				<div class="container">
+					<div class="content-info__body">
+						<div class="content-info__title">Что это?</div>
+						<div class="content-info__text">Техника «Помидора» — это технология управления временем, которая может быть использована для любых задач. Для многих людей время — это враг. Беспокойство, вызванное «тиканьем часов», приводит к неэффективной работе и к привычке затягивать задачи (прокрастинации).
+
+							Техника «Помидора» позволяет использовать время как ценного союзника в достижении того, что мы хотим сделать и как мы хотим это сделать. Она даёт нам возможность постоянно улучшать то, как мы работаем или учимся.</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<!-- @import "footer.kit" -->
+		<!-- @import "popup.kit" -->
 		<!-- @import "js.kit" -->
 </body>
 
